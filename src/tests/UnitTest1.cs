@@ -20,7 +20,7 @@ namespace MyGithubActionsPresentation.Tests
     [TestMethod]
     public void Test3Passes()
     {
-      Assert.IsTrue(true);
+      Assert.IsTrue(false);
     }
 
     [TestMethod]
