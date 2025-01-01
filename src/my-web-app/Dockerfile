@@ -5,8 +5,8 @@ EXPOSE 80
 EXPOSE 443
 
 # copy everything else and build app
-COPY my-web-app/. ./my-web-app/
-RUN dotnet publish -c Release -o /app my-web-app/my-web-app.csproj
+COPY . ./
+RUN dotnet publish -c Release -o /app my-web-app.csproj
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
