@@ -113,7 +113,7 @@ jobs:
         id: deploy-apprunner
         uses: awslabs/amazon-app-runner-deploy@main
         with:
-          service: app-runner-git-deploy-service
+          service: my-web-app
           image: ${{ steps.build-image.outputs.image }}
           access-role-arn: ${{ secrets.ROLE_ARN }}
           region: ${{ secrets.AWS_REGION }}
@@ -121,7 +121,7 @@ jobs:
           memory : 2
           # Deprecated: wait-for-service-stability: true
           # The new way to control service stability timeout
-          wait-for-service-stability-seconds: 120
+          wait-for-service-stability-seconds: 300
       
       - name: App Runner URL
         run: echo "App runner URL ${{ steps.deploy-apprunner.outputs.service-url }}"
